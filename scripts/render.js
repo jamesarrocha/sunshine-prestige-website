@@ -7,15 +7,18 @@
   const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
   function renderTrustStrip() {
-    const items = [t('trust.usa'), t('trust.financing'), t('trust.counties'), t('trust.licensed'), t('trust.warranty')];
-    const html = [...items, ...items].map(text => `
-      <div class="trust-item">
-        <span class="trust-item__star" aria-hidden="true">✦</span>
-        <span>${esc(text)}</span>
-      </div>
-    `).join('');
     const el = document.getElementById('trust-track');
-    if (el) el.innerHTML = html;
+    if (!el) return;
+    const renderItem = (item) => {
+      const text = t(item.textKey);
+      const isFlag = item.icon === 'flag';
+      const iconHtml = isFlag
+        ? `<span class="trust-item__flag" aria-hidden="true">${D.ICONS.flag}</span>`
+        : `<span class="trust-item__star" aria-hidden="true">✦</span>`;
+      const cls = isFlag ? 'trust-item trust-item--highlight' : 'trust-item';
+      return `<div class="${cls}">${iconHtml}<span>${esc(text)}</span></div>`;
+    };
+    el.innerHTML = [...D.TRUST_ITEMS, ...D.TRUST_ITEMS].map(renderItem).join('');
   }
 
   function renderPillars() {
@@ -40,16 +43,23 @@
       <article class="benefit-card reveal">
         <div class="benefit-card__icon">${D.ICONS[b.icon]}</div>
         <h3 class="benefit-card__title">${t(b.titleKey)}</h3>
-        <p class="benefit-card__copy">${t(b.copyKey)}</p>
+        <ul class="benefit-card__bullets">
+          ${b.bullets.map(bk => `
+            <li>
+              <span class="benefit-card__check" aria-hidden="true">${D.ICONS.check}</span>
+              <span>${t(bk)}</span>
+            </li>
+          `).join('')}
+        </ul>
         <span class="benefit-card__stat">${t(b.statKey)}</span>
       </article>
     `).join('');
   }
 
-  function renderCollage(targetId, cells) {
-    const el = document.getElementById(targetId);
+  function renderLeadGenCollage() {
+    const el = document.getElementById('leadgen-collage');
     if (!el) return;
-    el.innerHTML = cells.map(c => {
+    el.innerHTML = D.LEADGEN_COLLAGE.map(c => {
       if (c.type === 'stat') {
         return `
           <div class="collage-cell stat-card stat-card--${c.variant}">
@@ -129,6 +139,29 @@
     `).join('');
   }
 
+  function renderReviews() {
+    const el = document.getElementById('reviews-grid');
+    if (!el) return;
+    const url = D.SITE.reviewsUrl;
+    el.innerHTML = D.REVIEWS.map(r => `
+      <a class="review-card reveal" href="${url}" target="_blank" rel="noopener" aria-label="${esc(t(r.nameKey))} · ${esc(t('reviews.viaGoogle'))}">
+        <div class="review-card__avatar" aria-hidden="true">${r.initial}</div>
+        <div class="review-card__name">${esc(t(r.nameKey))}</div>
+        <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+        <p class="review-card__text">${esc(t(r.textKey))}</p>
+        <div class="review-card__source">
+          <svg class="review-card__google" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/>
+            <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+            <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8L6.2 33C9.5 39.5 16.2 44 24 44z"/>
+            <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C40 35 44 30 44 24c0-1.3-.1-2.4-.4-3.5z"/>
+          </svg>
+          <span>${esc(t('reviews.viaGoogle'))}</span>
+        </div>
+      </a>
+    `).join('');
+  }
+
   function renderFloatingText() {
     const el = document.getElementById('floating-text-path');
     if (!el) return;
@@ -140,11 +173,11 @@
       renderTrustStrip();
       renderPillars();
       renderBenefits();
-      renderCollage('founder-collage',  D.FOUNDER_COLLAGE);
-      renderCollage('leadgen-collage',  D.LEADGEN_COLLAGE);
+      renderLeadGenCollage();
       renderProcess();
       renderCoverage();
       renderGallery();
+      renderReviews();
       renderFloatingText();
       if (window.SP_MAIN && window.SP_MAIN.refreshReveals) window.SP_MAIN.refreshReveals();
     },
