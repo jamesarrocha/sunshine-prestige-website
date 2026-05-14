@@ -299,6 +299,15 @@
 }
 .btn-secondary__icon { color: var(--gold); display: inline-flex; }
 .btn-secondary__text { display: flex; flex-direction: column; line-height: 1.1; align-items: flex-start; }
+
+/* Mobile: center phone CTA contents (icon + label + number) */
+@media (max-width: 639px) {
+  .btn-secondary {
+    justify-content: center;
+    text-align: center;
+  }
+  .btn-secondary__text { align-items: center; }
+}
 .btn-secondary__label {
   font-family: var(--font-display);
   font-size: 10px;
