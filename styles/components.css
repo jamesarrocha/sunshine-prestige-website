@@ -286,16 +286,16 @@
   gap: 12px;
   padding: 14px 22px;
   border-radius: 999px;
-  border: 1px solid rgba(250, 248, 243, 0.20);
-  background: rgba(29, 40, 75, 0.30);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: linear-gradient(135deg, var(--royal) 0%, #3f3270 100%);
   color: var(--ivory);
-  transition: background 0.2s, border-color 0.2s;
+  box-shadow: 0 4px 16px -4px rgba(81, 64, 135, 0.55);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .btn-secondary:hover {
-  background: rgba(29, 40, 75, 0.55);
-  border-color: rgba(250, 248, 243, 0.40);
+  background: linear-gradient(135deg, #5d4a9b 0%, var(--royal) 100%);
+  box-shadow: 0 6px 22px -4px rgba(81, 64, 135, 0.80);
+  transform: translateY(-1px);
 }
 .btn-secondary__icon { color: var(--gold); display: inline-flex; }
 .btn-secondary__text { display: flex; flex-direction: column; line-height: 1.1; align-items: flex-start; }

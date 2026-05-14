@@ -25,14 +25,10 @@ const BENEFITS = [
   {
     icon: 'hurricane', titleKey: 'b1.t', statKey: 'b1.s',
     bullets: ['b1.b1', 'b1.b2', 'b1.b3'],
-    image: 'assets/img/hurricane-map.png',
-    imageAlt: 'South Florida hurricane wind speed zones — 140 to 180 mph',
   },
   {
     icon: 'energy', titleKey: 'b2.t', statKey: 'b2.s',
     bullets: ['b2.b1', 'b2.b2', 'b2.b3'],
-    image: 'assets/img/energy-flow.png',
-    imageAlt: 'Low-E glass reflects solar heat while letting visible light through',
   },
   {
     icon: 'noise', titleKey: 'b3.t', statKey: 'b3.s',
