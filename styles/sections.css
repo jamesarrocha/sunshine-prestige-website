@@ -52,6 +52,18 @@
 }
 @media (min-width: 640px) { .hero__content-wrapper { padding: 40px 40px 130px; } }
 @media (min-width: 980px) { .hero__content-wrapper { padding: 40px 56px 130px; } }
+
+/* Mobile: shrink hero ~30% so the video stops dominating
+   the viewport and the headline message gets more weight. */
+@media (max-width: 639px) {
+  .hero { min-height: 70svh; }
+  .hero__content-wrapper {
+    min-height: calc(70svh - 80px);
+    padding-top: 28px;
+    padding-bottom: 110px;
+  }
+  .headline { font-size: clamp(2.2rem, 11vw, 3.6rem); }
+}
 .hero__content { max-width: 1280px; margin: 0 auto; width: 100%; }
 .hero__inner { max-width: 760px; }
 
