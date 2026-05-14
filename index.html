@@ -122,16 +122,6 @@
         <p class="subhead" data-i18n="hero.subhead">Impact Windows &amp; Doors.</p>
         <p class="body-copy" data-i18n="hero.body">Hurricane-rated, lab-tested, expertly installed. Close the door on hurricanes, stray golf balls, and would-be intruders.</p>
 
-        <div class="hero__usa-badge" role="img" aria-label="100% USA-Made Windows">
-          <span class="hero__usa-badge-flag" aria-hidden="true">
-            <svg viewBox="0 0 38 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="20" fill="#B22234"/><rect y="1.54" width="38" height="1.54" fill="#fff"/><rect y="4.62" width="38" height="1.54" fill="#fff"/><rect y="7.69" width="38" height="1.54" fill="#fff"/><rect y="10.77" width="38" height="1.54" fill="#fff"/><rect y="13.85" width="38" height="1.54" fill="#fff"/><rect y="16.92" width="38" height="1.54" fill="#fff"/><rect width="15.2" height="10.77" fill="#3C3B6E"/><g fill="#fff"><circle cx="1.7" cy="1.3" r="0.55"/><circle cx="4.1" cy="1.3" r="0.55"/><circle cx="6.5" cy="1.3" r="0.55"/><circle cx="8.9" cy="1.3" r="0.55"/><circle cx="11.3" cy="1.3" r="0.55"/><circle cx="13.7" cy="1.3" r="0.55"/><circle cx="2.9" cy="2.7" r="0.55"/><circle cx="5.3" cy="2.7" r="0.55"/><circle cx="7.7" cy="2.7" r="0.55"/><circle cx="10.1" cy="2.7" r="0.55"/><circle cx="12.5" cy="2.7" r="0.55"/><circle cx="1.7" cy="4.1" r="0.55"/><circle cx="4.1" cy="4.1" r="0.55"/><circle cx="6.5" cy="4.1" r="0.55"/><circle cx="8.9" cy="4.1" r="0.55"/><circle cx="11.3" cy="4.1" r="0.55"/><circle cx="13.7" cy="4.1" r="0.55"/><circle cx="2.9" cy="5.5" r="0.55"/><circle cx="5.3" cy="5.5" r="0.55"/><circle cx="7.7" cy="5.5" r="0.55"/><circle cx="10.1" cy="5.5" r="0.55"/><circle cx="12.5" cy="5.5" r="0.55"/><circle cx="1.7" cy="6.9" r="0.55"/><circle cx="4.1" cy="6.9" r="0.55"/><circle cx="6.5" cy="6.9" r="0.55"/><circle cx="8.9" cy="6.9" r="0.55"/><circle cx="11.3" cy="6.9" r="0.55"/><circle cx="13.7" cy="6.9" r="0.55"/><circle cx="2.9" cy="8.3" r="0.55"/><circle cx="5.3" cy="8.3" r="0.55"/><circle cx="7.7" cy="8.3" r="0.55"/><circle cx="10.1" cy="8.3" r="0.55"/><circle cx="12.5" cy="8.3" r="0.55"/><circle cx="1.7" cy="9.7" r="0.55"/><circle cx="4.1" cy="9.7" r="0.55"/><circle cx="6.5" cy="9.7" r="0.55"/><circle cx="8.9" cy="9.7" r="0.55"/><circle cx="11.3" cy="9.7" r="0.55"/><circle cx="13.7" cy="9.7" r="0.55"/></g></svg>
-          </span>
-          <span class="hero__usa-badge-text">
-            <strong data-i18n="hero.usaBadgeTitle">100% USA-Made Windows</strong>
-            <span data-i18n="hero.usaBadgeSub">Crafted by American manufacturers</span>
-          </span>
-        </div>
-
         <div class="cta-row">
           <button type="button" class="btn-primary" data-open-modal="hero">
             <span data-i18n="hero.cta1">Get a Free Quote</span>
@@ -347,6 +337,104 @@
       </h2>
       <p class="section-lead" style="color: rgba(29,40,75,0.70);" data-i18n="coverage.lead">Licensed and insured across Miami-Dade, Broward, and Palm Beach.</p>
     </div>
+
+    <!-- Animated South Florida map with pulsing coverage pins -->
+    <figure class="florida-map reveal" aria-labelledby="florida-map-title">
+      <figcaption id="florida-map-title" class="sr-only">South Florida coverage map showing Miami-Dade, Broward, and Palm Beach counties</figcaption>
+      <svg class="florida-map__svg" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <radialGradient id="glowMiami" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#DDAB57" stop-opacity="0.55"/>
+            <stop offset="60%" stop-color="#DDAB57" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#DDAB57" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="glowBroward" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#DDAB57" stop-opacity="0.55"/>
+            <stop offset="60%" stop-color="#DDAB57" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#DDAB57" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="glowPalm" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#DDAB57" stop-opacity="0.55"/>
+            <stop offset="60%" stop-color="#DDAB57" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#DDAB57" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Stylized peninsula silhouette of Florida (simplified) -->
+        <path class="florida-map__land"
+              d="M 250 30
+                 C 280 50 305 60 315 90
+                 C 320 110 318 130 312 150
+                 C 308 175 300 200 295 225
+                 C 290 250 290 275 295 300
+                 C 305 330 320 360 340 385
+                 C 360 412 380 440 395 475
+                 C 405 510 408 540 395 560
+                 C 380 575 360 580 340 575
+                 C 305 568 280 550 260 525
+                 C 235 495 215 460 200 425
+                 C 185 390 175 355 170 320
+                 C 165 285 168 250 175 220
+                 C 182 190 192 165 200 140
+                 C 208 115 218 92 232 72
+                 C 240 60 244 45 250 30 Z"
+              fill="#E7E9EE"
+              stroke="#717C9B"
+              stroke-width="1.4"
+              stroke-linejoin="round"/>
+
+        <!-- Highlighted coverage area (the south-east corner) -->
+        <path class="florida-map__coverage"
+              d="M 365 380
+                 C 385 410 400 440 405 470
+                 C 408 500 405 530 395 555
+                 C 380 572 360 578 340 573
+                 C 315 568 295 555 285 530
+                 C 280 510 290 480 305 450
+                 C 320 425 340 400 365 380 Z"
+              fill="rgba(221, 171, 87, 0.10)"
+              stroke="#DDAB57"
+              stroke-width="2"
+              stroke-dasharray="4 6"
+              stroke-linejoin="round"/>
+
+        <!-- Pulsing glow halos behind each pin -->
+        <circle class="florida-map__halo florida-map__halo--palm"   cx="395" cy="395" r="55" fill="url(#glowPalm)"/>
+        <circle class="florida-map__halo florida-map__halo--broward" cx="385" cy="450" r="55" fill="url(#glowBroward)"/>
+        <circle class="florida-map__halo florida-map__halo--miami"   cx="365" cy="510" r="55" fill="url(#glowMiami)"/>
+
+        <!-- 3 Pins: Palm Beach (top), Broward (middle), Miami-Dade (bottom) -->
+        <g class="florida-map__pin florida-map__pin--palm" transform="translate(395 395)">
+          <circle r="14" fill="rgba(221,171,87,0.30)" class="florida-map__pin-ring"/>
+          <circle r="8" fill="#DDAB57" stroke="#FAF8F3" stroke-width="2"/>
+          <circle r="3" fill="#1D284B"/>
+        </g>
+        <g class="florida-map__pin florida-map__pin--broward" transform="translate(385 450)">
+          <circle r="14" fill="rgba(221,171,87,0.30)" class="florida-map__pin-ring"/>
+          <circle r="8" fill="#DDAB57" stroke="#FAF8F3" stroke-width="2"/>
+          <circle r="3" fill="#1D284B"/>
+        </g>
+        <g class="florida-map__pin florida-map__pin--miami" transform="translate(365 510)">
+          <circle r="14" fill="rgba(221,171,87,0.30)" class="florida-map__pin-ring"/>
+          <circle r="8" fill="#DDAB57" stroke="#FAF8F3" stroke-width="2"/>
+          <circle r="3" fill="#1D284B"/>
+        </g>
+
+        <!-- Labels next to each pin -->
+        <g class="florida-map__labels">
+          <text x="420" y="399" class="florida-map__label">PALM BEACH</text>
+          <text x="410" y="454" class="florida-map__label">BROWARD</text>
+          <text x="390" y="514" class="florida-map__label">MIAMI-DADE</text>
+        </g>
+
+        <!-- Map title -->
+        <text x="60" y="55" class="florida-map__title">SOUTH</text>
+        <text x="60" y="85" class="florida-map__title">FLORIDA</text>
+        <line x1="60" y1="100" x2="180" y2="100" stroke="#DDAB57" stroke-width="2"/>
+        <text x="60" y="120" class="florida-map__subtitle">OUR COVERAGE AREA</text>
+      </svg>
+    </figure>
+
     <div class="coverage-grid" id="coverage-grid"></div>
   </div>
 </section>
