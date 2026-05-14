@@ -9,6 +9,8 @@ const I18N = {
     'nav.gallery': 'Projects', 'nav.reviews': 'Reviews',
     'nav.process': 'Process', 'nav.coverage': 'Coverage',
     'nav.reviewsBtn': 'Reviews',
+    'topbar.schedule': 'Schedule Online',
+    'topbar.phoneAria': 'Call Sunshine Prestige at (305) 898-5167',
 
     'hero.eyebrow': 'South Florida · Family-Owned',
     'hero.line1': 'Built to protect',
@@ -209,6 +211,8 @@ const I18N = {
     'nav.gallery': 'Proyectos', 'nav.reviews': 'Reseñas',
     'nav.process': 'Proceso', 'nav.coverage': 'Cobertura',
     'nav.reviewsBtn': 'Reseñas',
+    'topbar.schedule': 'Agendar Cita',
+    'topbar.phoneAria': 'Llamar a Sunshine Prestige al (305) 898-5167',
 
     'hero.eyebrow': 'Sur de Florida · Empresa Familiar',
     'hero.line1': 'Construidas para proteger',

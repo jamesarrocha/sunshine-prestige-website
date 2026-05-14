@@ -95,6 +95,69 @@
 @media (min-width: 640px) { .reviews-btn { display: inline-flex; } }
 
 /* ============================================================
+   TOPBAR CTAs — Phone + Schedule Online
+   ============================================================ */
+.topbar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.topbar-cta svg { flex-shrink: 0; }
+
+/* Phone — outline / glass */
+.topbar-cta--phone {
+  background: rgba(250, 248, 243, 0.05);
+  border: 1px solid rgba(250, 248, 243, 0.20);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--ivory);
+}
+.topbar-cta--phone svg { color: var(--gold); }
+.topbar-cta--phone:hover {
+  background: rgba(250, 248, 243, 0.10);
+  border-color: var(--gold);
+}
+.topbar-cta__num {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Schedule — gold filled, primary action */
+.topbar-cta--book {
+  background: var(--gold);
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  padding: 9px 16px;
+  border: 1px solid var(--gold);
+  box-shadow: 0 4px 14px -4px rgba(221, 171, 87, 0.45);
+}
+.topbar-cta--book:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold-soft);
+  box-shadow: 0 6px 20px -4px rgba(221, 171, 87, 0.65);
+  transform: translateY(-1px);
+}
+
+/* Mobile: phone collapses to icon-only, schedule shortens */
+@media (max-width: 639px) {
+  .topbar-cta--phone .topbar-cta__num { display: none; }
+  .topbar-cta--phone { padding: 9px 10px; }
+  .topbar-cta--book { padding: 9px 12px; font-size: 10.5px; letter-spacing: 0.10em; }
+  .topbar-cta--book svg { display: none; }
+}
+
+/* ============================================================
    LANGUAGE TOGGLE
    ============================================================ */
 .lang-toggle {
