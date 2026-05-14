@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sunshine Prestige — Impact Windows & Doors | South Florida</title>
+  <meta name="description" content="Built to protect what matters most. Hurricane-rated impact windows and doors expertly installed across Miami-Dade, Broward, and Palm Beach. 100% USA-made. Financing available. Lifetime workmanship guarantee." />
+  <meta name="theme-color" content="#1D284B" />
+  <meta property="og:title" content="Sunshine Prestige — Impact Windows & Doors" />
+  <meta property="og:description" content="Built to protect what matters most. Hurricane-rated impact windows and doors across South Florida." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://sunshineprestige.com/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets — load order matters: reset → vars → globals → animations → components → sections -->
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/globals.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+
+  <!-- Preload the hero video for instant playback -->
+  <link rel="preload" as="video" href="assets/video/hero.mp4" type="video/mp4" />
+</head>
+<body>
+
+<!-- ============================================================
+     GLOBAL SVG DEFS (goo filter for gradient blobs)
+============================================================ -->
+<svg style="position:absolute; width:0; height:0; overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="blurMe">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </defs>
+</svg>
+
+<!-- Reusable SVG: Sunburst logo lockup -->
+<template id="logo-svg-template">
+  <svg viewBox="0 0 200 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g stroke="currentColor" stroke-linecap="round" fill="none">
+      <line x1="100" y1="46" x2="100" y2="4" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="92"  y2="6" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="108" y2="6" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="83"  y2="10" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="117" y2="10" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="74"  y2="16" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="126" y2="16" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="66"  y2="24" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="134" y2="24" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="60"  y2="32" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="140" y2="32" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="56"  y2="40" stroke-width="0.9"/>
+      <line x1="100" y1="46" x2="144" y2="40" stroke-width="0.9"/>
+      <path d="M 91 46 Q 91 33 100 33 Q 109 33 109 46 Z" stroke-width="1.1" stroke-linejoin="round"/>
+      <line x1="100" y1="33" x2="100" y2="46" stroke-width="0.7"/>
+      <line x1="91"  y1="39.5" x2="109" y2="39.5" stroke-width="0.7"/>
+    </g>
+  </svg>
+</template>
+
+<!-- ============================================================
+     STICKY TOPBAR
+============================================================ -->
+<header class="topbar" id="topbar">
+  <a href="#hero" class="logo" aria-label="Sunshine Prestige home">
+    <svg class="logo__mark" viewBox="0 0 200 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g stroke="currentColor" stroke-linecap="round" fill="none">
+        <line x1="100" y1="46" x2="100" y2="4" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="92" y2="6" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="108" y2="6" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="83" y2="10" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="117" y2="10" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="74" y2="16" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="126" y2="16" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="66" y2="24" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="134" y2="24" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="60" y2="32" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="140" y2="32" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="56" y2="40" stroke-width="0.9"/>
+        <line x1="100" y1="46" x2="144" y2="40" stroke-width="0.9"/>
+        <path d="M 91 46 Q 91 33 100 33 Q 109 33 109 46 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        <line x1="100" y1="33" x2="100" y2="46" stroke-width="0.7"/>
+        <line x1="91" y1="39.5" x2="109" y2="39.5" stroke-width="0.7"/>
+      </g>
+    </svg>
+    <span class="logo__name">Sunshine Prestige</span>
+  </a>
+
+  <div class="topbar__right">
+    <nav class="nav" aria-label="Primary">
+      <a href="#why" data-i18n="nav.why">Why Us</a>
+      <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+      <a href="#founder" data-i18n="nav.story">Our Story</a>
+      <a href="#gallery" data-i18n="nav.gallery">Projects</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#coverage" data-i18n="nav.coverage">Coverage</a>
+    </nav>
+    <a class="reviews-btn" href="https://www.google.com/maps/place/Sunshine+Prestige+Impact+Windows+and+Doors/data=!4m2!3m1!1s0x0:0xbd04d28289d25b35?sa=X&ved=1t:2428&hl=en&ictx=111" target="_blank" rel="noopener">
+      <span class="reviews-btn__stars" aria-hidden="true">★★★★★</span>
+      <span data-i18n="nav.reviews">Reviews</span>
+    </a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="hero" aria-label="Sunshine Prestige hero">
+  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+    <source src="assets/video/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero__overlay-gradient"></div>
+  <div class="hero__overlay-vignette"></div>
+  <div class="hero__glow anim-drift"></div>
+  <div class="hero__grain"></div>
+
+  <div class="hero__content-wrapper">
+    <div class="hero__content">
+      <div class="hero__inner">
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-line" aria-hidden="true"></span>
+          <span class="hero__eyebrow-text" data-i18n="hero.eyebrow">South Florida · Family-Owned</span>
+        </div>
+
+        <h1 class="headline">
+          <span class="headline__line"><span data-i18n="hero.line1">Built to protect</span></span>
+          <span class="headline__line"><span data-i18n="hero.line2">what matters most.</span></span>
+        </h1>
+
+        <p class="subhead" data-i18n="hero.subhead">Impact Windows &amp; Doors.</p>
+        <p class="body-copy" data-i18n="hero.body">Hurricane-rated, lab-tested, expertly installed. Close the door on hurricanes, stray golf balls, and would-be intruders.</p>
+
+        <div class="cta-row">
+          <button type="button" class="btn-primary" data-open-modal="hero">
+            <span data-i18n="hero.cta1">Get a Free Quote</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </button>
+          <a class="btn-secondary" href="tel:+15551234567">
+            <span class="btn-secondary__icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <span class="btn-secondary__text">
+              <span class="btn-secondary__label" data-i18n="hero.cta2sub">Speak with an expert</span>
+              <span class="btn-secondary__number">(555) 123-4567</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-strip" aria-label="Trust badges">
+    <div class="trust-track" id="trust-track"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PILLARS — Why Sunshine Prestige
+============================================================ -->
+<section class="section pillars bg-periwinkle" id="why" aria-label="Why Sunshine Prestige">
+  <svg class="pillars__window" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M 20 280 L 20 80 Q 20 20 100 20 Q 180 20 180 80 L 180 280" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="100" y1="20" x2="100" y2="280" stroke="currentColor" stroke-width="1"/>
+    <line x1="20" y1="150" x2="180" y2="150" stroke="currentColor" stroke-width="1"/>
+  </svg>
+  <div class="container">
+    <div class="pillars__grid">
+      <div class="pillars__intro reveal">
+        <span class="section-eyebrow" data-i18n="pillars.eyebrow">Why Sunshine Prestige</span>
+        <h2 class="section-title" data-i18n="pillars.title">Five reasons families across South Florida trust us.</h2>
+        <p class="section-lead" data-i18n="pillars.lead">We don't just sell windows. We protect what's behind them — your family, your home, your peace of mind.</p>
+      </div>
+      <ol class="pillars-list" id="pillars-list"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BENEFITS
+============================================================ -->
+<section class="section bg-ivory" id="benefits" aria-label="Benefits of impact windows">
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <span class="section-eyebrow" style="color: var(--gold-deep);" data-i18n="benefits.eyebrow">Why Impact Windows</span>
+      <h2 class="section-title">
+        <span data-i18n="benefits.titleA">Six ways our windows</span>
+        <span class="accent" data-i18n="benefits.titleB">change your home.</span>
+      </h2>
+      <p class="section-lead" style="color: rgba(29,40,75,0.70);" data-i18n="benefits.lead">Designed for Florida's toughest weather. Engineered to make daily life better, year-round.</p>
+    </div>
+    <div class="benefits-grid" id="benefits-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOUNDER STORY (with collage)
+============================================================ -->
+<section class="section founder bg-paper" id="founder" aria-label="Our story">
+  <div class="container">
+    <div class="founder__grid">
+      <div class="founder__collage reveal" id="founder-collage"></div>
+      <div class="founder__story reveal">
+        <span class="section-eyebrow" style="color: var(--gold-deep);" data-i18n="founder.eyebrow">The Story Behind Sunshine Prestige</span>
+        <h2 class="section-title">
+          <span data-i18n="founder.titleA">Started by a designer.</span>
+          <span class="accent" data-i18n="founder.titleB">Driven by family.</span>
+        </h2>
+        <p data-i18n="founder.p1">Sunshine Prestige was founded with a passion for helping homeowners feel safe, secure, and proud of their homes.</p>
+        <p data-i18n="founder.p2">James — an Industrial Designer with an MBA — brings 20 years of experience.</p>
+        <p data-i18n="founder.p3">After moving to South Florida four years ago, he saw the urgent need for stronger, hurricane-resistant homes.</p>
+        <blockquote class="founder__quote" data-i18n="founder.quote">Our mission goes beyond selling windows — it's about protecting families, increasing property value, and giving homeowners peace of mind.</blockquote>
+        <div class="founder__quote-attr" data-i18n="founder.attr">— James, Founder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INLINE LEAD-GEN SECTION (collage + quick form)
+============================================================ -->
+<section class="section leadgen bg-ivory" id="leadgen" aria-label="Quick quote request">
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <span class="section-eyebrow" style="color: var(--gold-deep);" data-i18n="leadgen.eyebrow">Get in Touch</span>
+      <h2 class="section-title">
+        <span data-i18n="leadgen.titleA">30-second</span>
+        <span class="accent" data-i18n="leadgen.titleB">quote request.</span>
+      </h2>
+      <p class="section-lead" style="color: rgba(29,40,75,0.70);" data-i18n="leadgen.sub">We'll call you within 24 hours. No pressure, no sales pitch — just answers and a clear price.</p>
+    </div>
+
+    <div class="leadgen__grid">
+      <div class="leadgen__collage reveal" id="leadgen-collage"></div>
+
+      <div class="leadgen__form-card reveal">
+        <form id="leadgen-form" class="form" novalidate>
+          <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_KEY" />
+          <input type="hidden" name="subject" value="New lead (Inline) — Sunshine Prestige" />
+          <input type="hidden" name="from_name" value="sunshineprestige.com" />
+          <input type="hidden" name="source" value="inline-leadgen" />
+          <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
+
+          <div class="form-field">
+            <span class="form-field__bar" aria-hidden="true"></span>
+            <span class="form-field__inner">
+              <label class="form-field__label" for="leadgen-name" data-i18n="form.nameLabel">Full name</label>
+              <input class="form-input" id="leadgen-name" name="name" type="text" required data-i18n-placeholder="leadgen.namePh" placeholder="Full name" />
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="form-field__bar" aria-hidden="true"></span>
+            <span class="form-field__inner">
+              <label class="form-field__label" for="leadgen-email" data-i18n="form.emailLabel">Email</label>
+              <input class="form-input" id="leadgen-email" name="email" type="email" required data-i18n-placeholder="leadgen.emailPh" placeholder="Email address" />
+            </span>
+          </div>
+
+          <div class="form-field">
+            <span class="form-field__bar" aria-hidden="true"></span>
+            <span class="form-field__inner">
+              <label class="form-field__label" for="leadgen-phone" data-i18n="form.phoneLabel">Phone</label>
+              <input class="form-input" id="leadgen-phone" name="phone" type="tel" required data-i18n-placeholder="leadgen.phonePh" placeholder="Phone number" />
+            </span>
+          </div>
+
+          <button type="submit" class="form-submit" id="leadgen-submit-btn" data-i18n="leadgen.submit">Request my quote →</button>
+          <p class="form-msg" id="leadgen-msg" role="status" aria-live="polite"></p>
+          <p class="form-privacy" data-i18n="leadgen.privacy">We respect your privacy. Your info is used only to follow up about your project.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BEFORE & AFTER GALLERY
+============================================================ -->
+<section class="section bg-ivory" id="gallery" aria-label="Before and after gallery">
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <span class="section-eyebrow" style="color: var(--gold-deep);" data-i18n="gallery.eyebrow">Before &amp; After</span>
+      <h2 class="section-title">
+        <span data-i18n="gallery.titleA">Real homes.</span>
+        <span class="accent" data-i18n="gallery.titleB">Real transformations.</span>
+      </h2>
+      <p class="section-lead" style="color: rgba(29,40,75,0.70);" data-i18n="gallery.lead">Every Sunshine Prestige installation is custom-fitted, expertly placed, and protected for life.</p>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <div class="gallery-note reveal" role="note">
+      <span class="gallery-note__icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </span>
+      <span data-i18n="gallery.note"><strong>Placeholder images.</strong> Replace with real Before &amp; After photos in <code>/assets/img/projects/</code>.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS — 360° Promise
+============================================================ -->
+<section class="section bg-navy" id="process" aria-label="Our process">
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <span class="section-eyebrow" style="color: var(--gold);" data-i18n="process.eyebrow">Our 360° Promise</span>
+      <h2 class="section-title">
+        <span data-i18n="process.titleA">We handle</span>
+        <span class="accent" data-i18n="process.titleB">everything.</span>
+      </h2>
+      <p class="section-lead" style="color: rgba(250,248,243,0.80);" data-i18n="process.lead">From the first call to the final inspection — and beyond. Ten steps, zero surprises, total peace of mind.</p>
+    </div>
+    <div class="process__phases" id="process-phases"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COVERAGE
+============================================================ -->
+<section class="section bg-ivory" id="coverage" aria-label="Coverage area">
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <span class="section-eyebrow" style="color: var(--gold-deep);" data-i18n="coverage.eyebrow">Where We Work</span>
+      <h2 class="section-title">
+        <span data-i18n="coverage.titleA">Serving South Florida.</span>
+        <span class="accent" data-i18n="coverage.titleB">Three counties. One team.</span>
+      </h2>
+      <p class="section-lead" style="color: rgba(29,40,75,0.70);" data-i18n="coverage.lead">Licensed and insured across Miami-Dade, Broward, and Palm Beach.</p>
+    </div>
+    <div class="coverage-grid" id="coverage-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WARRANTIES (Wine accent)
+============================================================ -->
+<section class="section bg-wine" aria-label="Warranties">
+  <div class="container">
+    <div class="reveal" style="max-width: 720px;">
+      <span class="section-eyebrow" style="color: var(--gold);" data-i18n="warranty.eyebrow">Guaranteed for Life</span>
+      <h2 class="section-title">
+        <span data-i18n="warranty.titleA">We stand behind</span>
+        <span class="accent" data-i18n="warranty.titleB">every install.</span>
+      </h2>
+    </div>
+    <div class="warranty-row">
+      <div class="warranty reveal">
+        <div class="warranty__years">10–15</div>
+        <div class="warranty__years-suffix" data-i18n="warranty.years">Years</div>
+        <div class="warranty__label" data-i18n="warranty.system">System Warranty</div>
+      </div>
+      <div class="warranty reveal">
+        <div class="warranty__years">5–15</div>
+        <div class="warranty__years-suffix" data-i18n="warranty.years">Years</div>
+        <div class="warranty__label" data-i18n="warranty.material">Material Warranty</div>
+      </div>
+      <div class="warranty reveal">
+        <div class="warranty__years">20</div>
+        <div class="warranty__years-suffix" data-i18n="warranty.years">Years</div>
+        <div class="warranty__label" data-i18n="warranty.workmanship">Workmanship Warranty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA  (with animated gradient blobs)
+============================================================ -->
+<section class="final-cta" aria-label="Ready to get started">
+  <div class="blobs" aria-hidden="true">
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+    <div class="blob blob--4"></div>
+    <div class="blob blob--5"></div>
+    <div class="blob blob--pointer"></div>
+  </div>
+
+  <div class="final-cta__inner reveal">
+    <h2 class="final-cta__title">
+      <span data-i18n="finalcta.titleA">Ready to protect</span><br/>
+      <span class="accent" data-i18n="finalcta.titleB">what matters most?</span>
+    </h2>
+    <p class="final-cta__sub" data-i18n="finalcta.sub">Free in-home consultation. Custom proposal in 24 hours.</p>
+    <div class="final-cta__row">
+      <button type="button" class="btn-primary" data-open-modal="final-cta">
+        <span data-i18n="finalcta.cta1">Get My Free Quote</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </button>
+      <a class="btn-secondary" href="tel:+15551234567">
+        <span class="btn-secondary__icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </span>
+        <span class="btn-secondary__text">
+          <span class="btn-secondary__label" data-i18n="hero.cta2sub">Speak with an expert</span>
+          <span class="btn-secondary__number">(555) 123-4567</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER + Mini-form
+============================================================ -->
+<footer class="footer">
+  <div class="container">
+
+    <!-- Mini-form row -->
+    <div class="footer__top">
+      <div class="reveal">
+        <h3 class="footer__cta-headline">
+          <span data-i18n="footer.cta-headlineA">Don't wait for the next storm.</span><br/>
+          <span class="accent" data-i18n="footer.cta-headlineB">Protect your home today.</span>
+        </h3>
+        <p class="footer__cta-sub" data-i18n="footer.cta-sub">Drop your email and we'll reach out with a free, no-pressure consultation.</p>
+      </div>
+      <form class="footer__mini-form-wrap reveal" id="footer-form" novalidate>
+        <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_KEY" />
+        <input type="hidden" name="subject" value="New lead (Footer) — Sunshine Prestige" />
+        <input type="hidden" name="from_name" value="sunshineprestige.com" />
+        <input type="hidden" name="source" value="footer" />
+        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
+        <div class="footer__mini-form">
+          <input type="email" name="email" required data-i18n-placeholder="footer.email-ph" placeholder="Email address" />
+          <button type="submit" id="footer-submit-btn" data-i18n="footer.email-cta">Request quote</button>
+        </div>
+        <p class="footer__mini-msg" id="footer-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <!-- Sitemap row -->
+    <div class="footer__grid">
+      <div class="footer__col">
+        <a href="#hero" class="logo" style="align-items: flex-start;">
+          <svg class="logo__mark" viewBox="0 0 200 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 90px;">
+            <g stroke="currentColor" stroke-linecap="round" fill="none">
+              <line x1="100" y1="46" x2="100" y2="4" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="92" y2="6" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="108" y2="6" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="83" y2="10" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="117" y2="10" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="74" y2="16" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="126" y2="16" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="66" y2="24" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="134" y2="24" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="60" y2="32" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="140" y2="32" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="56" y2="40" stroke-width="0.9"/>
+              <line x1="100" y1="46" x2="144" y2="40" stroke-width="0.9"/>
+              <path d="M 91 46 Q 91 33 100 33 Q 109 33 109 46 Z" stroke-width="1.1" stroke-linejoin="round"/>
+              <line x1="100" y1="33" x2="100" y2="46" stroke-width="0.7"/>
+              <line x1="91" y1="39.5" x2="109" y2="39.5" stroke-width="0.7"/>
+            </g>
+          </svg>
+          <span class="logo__name" style="font-size: 18px;">Sunshine Prestige</span>
+        </a>
+        <p class="footer__brand-text" data-i18n="footer.tagline">Impact windows and doors built to protect Florida families.</p>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer.explore">Explore</h4>
+        <ul>
+          <li><a href="#why" data-i18n="nav.why">Why Us</a></li>
+          <li><a href="#benefits" data-i18n="nav.benefits">Benefits</a></li>
+          <li><a href="#founder" data-i18n="nav.story">Our Story</a></li>
+          <li><a href="#gallery" data-i18n="nav.gallery">Projects</a></li>
+          <li><a href="#process" data-i18n="nav.process">Process</a></li>
+          <li><a href="#coverage" data-i18n="nav.coverage">Coverage</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer.contact">Contact</h4>
+        <ul>
+          <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:info@sunshineprestige.com">info@sunshineprestige.com</a></li>
+          <li><a href="https://www.google.com/maps/place/Sunshine+Prestige+Impact+Windows+and+Doors/data=!4m2!3m1!1s0x0:0xbd04d28289d25b35?sa=X&ved=1t:2428&hl=en&ictx=111" target="_blank" rel="noopener" data-i18n="footer.google">Google Reviews ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer.service">Service Area</h4>
+        <ul>
+          <li>Miami-Dade</li>
+          <li>Broward</li>
+          <li>Palm Beach</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span data-i18n="footer.copy">© 2026 Sunshine Prestige Impact Windows &amp; Doors.</span>
+      <span data-i18n="footer.license">FL Lic. #XXXXXXX · Licensed &amp; Insured</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING CONSULT BUTTON (sticky)
+============================================================ -->
+<div class="floating-cta">
+  <button type="button" class="floating-cta__btn" data-open-modal="floating" aria-label="Open consultation request">
+    <div class="floating-cta__rotor" aria-hidden="true">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <defs>
+          <path id="floating-circle-path" d="M 100, 100 m -78, 0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" />
+        </defs>
+        <text>
+          <textPath href="#floating-circle-path" id="floating-text-path" startOffset="0%">FREE CONSULT · 24-HOUR RESPONSE · NO PRESSURE · </textPath>
+        </text>
+      </svg>
+    </div>
+    <div class="floating-cta__center">
+      <div class="floating-cta__circle floating-cta__circle--fallback">
+        <!-- Replace this fallback SVG with: <img src="assets/img/founder/james.jpg" alt="James, Founder"> -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <div class="floating-cta__halo" aria-hidden="true"></div>
+    </div>
+  </button>
+</div>
+
+<!-- ============================================================
+     MODAL — Full Quote Form
+============================================================ -->
+<div class="modal" id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-title" aria-hidden="true">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__dialog">
+    <button type="button" class="modal__close" data-close-modal aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <h2 class="form-title" id="quote-title" data-i18n="form.title">Get a Free Quote</h2>
+    <p class="form-subtitle" data-i18n="form.subtitle">Tell us about your home. Our team will reach out within 24 hours.</p>
+
+    <form class="form" id="quote-form" novalidate>
+      <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_KEY" />
+      <input type="hidden" name="subject" value="New lead — Sunshine Prestige" />
+      <input type="hidden" name="from_name" value="sunshineprestige.com" />
+      <input type="hidden" name="source" value="unknown" />
+      <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
+
+      <div class="form-field">
+        <span class="form-field__bar" aria-hidden="true"></span>
+        <span class="form-field__inner">
+          <label class="form-field__label" for="f-name" data-i18n="form.nameLabel">Full name</label>
+          <input class="form-input" id="f-name" name="name" type="text" required placeholder="Jane Doe" />
+        </span>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-field">
+          <span class="form-field__bar" aria-hidden="true"></span>
+          <span class="form-field__inner">
+            <label class="form-field__label" for="f-phone" data-i18n="form.phoneLabel">Phone</label>
+            <input class="form-input" id="f-phone" name="phone" type="tel" required placeholder="(305) 555-0199" />
+          </span>
+        </div>
+        <div class="form-field">
+          <span class="form-field__bar" aria-hidden="true"></span>
+          <span class="form-field__inner">
+            <label class="form-field__label" for="f-email" data-i18n="form.emailLabel">Email</label>
+            <input class="form-input" id="f-email" name="email" type="email" required placeholder="you@example.com" />
+          </span>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-field">
+          <span class="form-field__bar" aria-hidden="true"></span>
+          <span class="form-field__inner">
+            <label class="form-field__label" for="f-county" data-i18n="form.countyLabel">County</label>
+            <select class="form-select" id="f-county" name="county" required>
+              <option value="">—</option>
+              <option value="miami-dade">Miami-Dade</option>
+              <option value="broward">Broward</option>
+              <option value="palm-beach">Palm Beach</option>
+              <option value="other" data-i18n="form.countyOther">Other (South Florida)</option>
+            </select>
+          </span>
+        </div>
+        <div class="form-field">
+          <span class="form-field__bar" aria-hidden="true"></span>
+          <span class="form-field__inner">
+            <label class="form-field__label" for="f-zip" data-i18n="form.zipLabel">ZIP code</label>
+            <input class="form-input" id="f-zip" name="zip" type="text" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="33101" />
+          </span>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <span class="form-field__bar" aria-hidden="true"></span>
+        <span class="form-field__inner">
+          <label class="form-field__label" for="f-project" data-i18n="form.projectLabel">What are you looking for?</label>
+          <select class="form-select" id="f-project" name="project" required>
+            <option value="">—</option>
+            <option value="windows" data-i18n="form.projWindows">Impact windows</option>
+            <option value="doors" data-i18n="form.projDoors">Impact doors</option>
+            <option value="both" data-i18n="form.projBoth">Windows &amp; doors</option>
+            <option value="unsure" data-i18n="form.projUnsure">Not sure yet — help me decide</option>
+          </select>
+        </span>
+      </div>
+
+      <button type="submit" class="form-submit" id="form-submit-btn" data-i18n="form.submit">Request my free quote</button>
+      <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+      <p class="form-privacy" data-i18n="form.privacy">We respect your privacy.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================
+     SCRIPTS — order matters
+============================================================ -->
+<script src="scripts/data.js"></script>
+<script src="scripts/i18n.js"></script>
+<script src="scripts/render.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>

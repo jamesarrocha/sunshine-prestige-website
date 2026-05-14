@@ -1,0 +1,58 @@
+/* ============================================================
+   Brand Tokens — single source of truth
+   Edit hex codes here, the whole site updates.
+   ============================================================ */
+:root {
+  /* ─── Primary palette (Sunshine Prestige official) ─── */
+  --navy:           #1D284B;
+  --navy-700:       #172040;
+  --navy-300:       #717C9B;
+  --navy-deep:      #0C1226;          /* darkest tone — NOT black */
+
+  --gold:           #DDAB57;
+  --gold-soft:      #E7BF6B;
+  --gold-deep:      #B47A2C;
+
+  /* ─── Secondary ─── */
+  --periwinkle:     #6D7EB1;
+  --periwinkle-dk:  #5163A0;
+
+  /* ─── Tertiary ─── */
+  --royal:          #514087;
+  --wine:           #300C29;
+  --marigold:       #D4924A;
+
+  /* ─── Neutrals ─── */
+  --ivory:          #FAF8F3;
+  --paper:          #F4EFE4;
+  --line:           rgba(29, 40, 75, 0.10);
+  --line-strong:    rgba(29, 40, 75, 0.18);
+
+  /* ─── Brand-tinted shadows (no pure black) ─── */
+  --shadow-sm:      0 4px 12px -4px rgba(29, 40, 75, 0.15);
+  --shadow-md:      0 10px 30px -10px rgba(29, 40, 75, 0.20);
+  --shadow-lg:      0 20px 60px -20px rgba(29, 40, 75, 0.28);
+  --shadow-gold:    0 8px 30px -8px rgba(221, 171, 87, 0.50);
+  --shadow-gold-lg: 0 16px 50px -10px rgba(221, 171, 87, 0.55);
+
+  /* ─── Typography ─── */
+  --font-display:   'Montserrat', system-ui, sans-serif;
+  --font-serif:     'Cormorant', Georgia, serif;
+  --font-body:      'Inter', system-ui, sans-serif;
+
+  /* ─── Easing ─── */
+  --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap:      cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─── Breakpoints (CSS reference — used in @media) ─── */
+  /* --bp-tablet:   640px;
+     --bp-desktop:  980px; */
+
+  /* ─── Z-index scale ─── */
+  --z-base:         1;
+  --z-overlay:      10;
+  --z-nav:          50;
+  --z-floating:     60;
+  --z-modal:        100;
+  --z-toast:        200;
+}
