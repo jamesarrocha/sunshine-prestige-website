@@ -179,6 +179,51 @@
   }
 
   /* ─────────────────────────────────────────────
+     MARQUEE — scroll velocity boost
+     Marquee normally runs at base speed; when the user
+     scrolls fast, the tracks briefly speed up + the
+     direction follows the scroll direction.
+     ───────────────────────────────────────────── */
+  const marqueeTracks = $$('[data-marquee-track]');
+  if (marqueeTracks.length) {
+    let lastY = window.scrollY;
+    let lastT = performance.now();
+    let boost = 1;        // current speed multiplier (1 = base)
+    let targetBoost = 1;  // where boost is easing toward
+    let dirSign = 1;      // 1 = base direction; -1 = reversed
+
+    function onScroll() {
+      const now = performance.now();
+      const dt = Math.max(now - lastT, 1);
+      const dy = window.scrollY - lastY;
+      const vel = dy / dt;                 // px/ms
+      const absVel = Math.min(Math.abs(vel), 4);
+      targetBoost = 1 + absVel * 1.6;      // up to ~7.4x
+      if (vel > 0.1)  dirSign =  1;
+      else if (vel < -0.1) dirSign = -1;
+      lastY = window.scrollY;
+      lastT = now;
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    function tick() {
+      // ease boost back to 1 when not scrolling
+      boost += (targetBoost - boost) * 0.12;
+      targetBoost += (1 - targetBoost) * 0.08;
+      marqueeTracks.forEach(track => {
+        const baseDirection = track.dataset.direction === 'left' ? -1 : 1;
+        const direction = baseDirection * dirSign;
+        const sign = direction < 0 ? -1 : 1;
+        track.style.animationPlayState = 'running';
+        track.style.animationDuration = `${Math.max(38 / boost, 4)}s`;
+        track.style.animationDirection = sign === 1 ? 'normal' : 'reverse';
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+
+  /* ─────────────────────────────────────────────
      GRADIENT BLOBS — pointer-tracking (Final CTA)
      ───────────────────────────────────────────── */
   const blobsContainer = $('.blobs');

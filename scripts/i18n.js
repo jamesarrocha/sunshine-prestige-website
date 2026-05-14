@@ -111,6 +111,9 @@ const I18N = {
     'prj3.m':   'Whole-home energy refresh. Bronze-anodized frames matched to existing trim, polyurethane-insulated for maximum efficiency.',
     'prj3.c1':  '25% Energy Savings', 'prj3.c2': 'Custom Color',
 
+    'marquee.line1': 'Protect what matters most',
+    'marquee.line2': 'Family · Home · Peace of mind',
+
     'reviews.eyebrow': 'What clients say',
     'reviews.titleA': 'Trusted by South Florida',
     'reviews.titleB': 'families.',
@@ -311,6 +314,9 @@ const I18N = {
     'prj3.t': 'Upgrade energético · 22 ventanas',
     'prj3.m': 'Renovación energética completa. Marcos anodizados en bronce a juego con el detalle existente, aislamiento de poliuretano.',
     'prj3.c1': '25% Ahorro Energía', 'prj3.c2': 'Color Personalizado',
+
+    'marquee.line1': 'Protege lo que más importa',
+    'marquee.line2': 'Familia · Hogar · Tranquilidad',
 
     'reviews.eyebrow': 'Lo que dicen los clientes',
     'reviews.titleA': 'Familias del Sur de Florida',

@@ -812,6 +812,118 @@
 }
 
 /* ============================================================
+   MARQUEE SECTION  (mid-page brand promise)
+   ============================================================ */
+.marquee-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-700) 50%, var(--navy) 100%);
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid rgba(250, 248, 243, 0.06);
+  border-bottom: 1px solid rgba(250, 248, 243, 0.06);
+}
+@media (min-width: 980px) { .marquee-section { padding: 100px 0; gap: 20px; } }
+
+.marquee-section__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(280px, 38vw, 520px);
+  height: auto;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+.marquee {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.marquee__track {
+  display: inline-flex;
+  align-items: center;
+  gap: 38px;
+  animation: marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+.marquee--left .marquee__track {
+  animation-direction: reverse;
+  animation-duration: 44s;
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__text {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  font-size: clamp(2.6rem, 8vw, 6.5rem);
+  display: inline-block;
+}
+.marquee__text--gold {
+  color: var(--gold);
+  /* Slight text-shadow for depth on navy bg */
+  text-shadow: 0 2px 12px rgba(221, 171, 87, 0.18);
+}
+.marquee__text--ivory {
+  color: rgba(250, 248, 243, 0.85);
+  font-weight: 400;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.8rem, 5vw, 4.5rem);
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.marquee__dot {
+  color: var(--gold);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  opacity: 0.6;
+}
+.marquee__dot--ivory {
+  color: rgba(250, 248, 243, 0.5);
+  font-weight: 400;
+}
+
+/* Fade edges so text appears to come from / fade into the dark void */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--navy) 0%, rgba(29, 40, 75, 0) 100%);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--navy) 0%, rgba(29, 40, 75, 0) 100%);
+}
+
+/* ============================================================
    PROCESS — 10 step 360° promise
    ============================================================ */
 /* ─── In-House Installers promise banner ─── */
