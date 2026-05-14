@@ -840,12 +840,12 @@
   display: inline-flex;
   align-items: center;
   gap: 38px;
-  animation: marquee-scroll 54s linear infinite;
+  animation: marquee-scroll 49s linear infinite;
   will-change: transform;
 }
 .marquee--left .marquee__track {
   animation-direction: reverse;
-  animation-duration: 65s;
+  animation-duration: 59s;
 }
 
 @keyframes marquee-scroll {
