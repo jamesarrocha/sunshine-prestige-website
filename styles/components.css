@@ -3,6 +3,12 @@
    ============================================================ */
 .logo { display: inline-flex; flex-direction: column; align-items: center; color: var(--ivory); }
 .logo__mark { width: 90px; height: auto; }
+.logo__img {
+  width: 130px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
 .logo__name {
   font-family: var(--font-serif);
   font-style: italic;
@@ -13,6 +19,7 @@
 }
 @media (min-width: 640px) {
   .logo__mark { width: 110px; }
+  .logo__img { width: 160px; }
   .logo__name { font-size: 19px; }
 }
 .logo--dark { color: var(--navy); }

@@ -347,7 +347,28 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
+  align-self: flex-start;
 }
+.benefit-card__image {
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(29, 40, 75, 0.04), rgba(29, 40, 75, 0.10));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+.benefit-card__image img {
+  max-width: 100%;
+  max-height: 220px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+/* Cards with image need the wrapper to be flex-column so stat can sit below image */
+.benefit-card--with-image { display: flex; flex-direction: column; }
+.benefit-card--with-image .benefit-card__stat { margin-top: 18px; }
 
 /* ============================================================
    FOUNDER STORY  (with 2×3 collage)
@@ -1184,11 +1205,13 @@
   box-shadow: var(--shadow-gold);
   display: flex; align-items: center; justify-content: center;
   position: relative;
+  border: 2px solid rgba(250, 248, 243, 0.95);
 }
 .floating-cta__circle img {
   width: 100%; height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  display: block;
 }
 .floating-cta__circle--fallback {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);

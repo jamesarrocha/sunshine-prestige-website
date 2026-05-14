@@ -39,21 +39,30 @@
   function renderBenefits() {
     const el = document.getElementById('benefits-grid');
     if (!el) return;
-    el.innerHTML = D.BENEFITS.map(b => `
-      <article class="benefit-card reveal">
-        <div class="benefit-card__icon">${D.ICONS[b.icon]}</div>
-        <h3 class="benefit-card__title">${t(b.titleKey)}</h3>
-        <ul class="benefit-card__bullets">
-          ${b.bullets.map(bk => `
-            <li>
-              <span class="benefit-card__check" aria-hidden="true">${D.ICONS.check}</span>
-              <span>${t(bk)}</span>
-            </li>
-          `).join('')}
-        </ul>
-        <span class="benefit-card__stat">${t(b.statKey)}</span>
-      </article>
-    `).join('');
+    el.innerHTML = D.BENEFITS.map(b => {
+      const imageBlock = b.image
+        ? `<div class="benefit-card__image">
+             <img src="${b.image}" alt="${esc(b.imageAlt || '')}" loading="lazy" />
+           </div>`
+        : '';
+      const visualClass = b.image ? ' benefit-card--with-image' : '';
+      return `
+        <article class="benefit-card${visualClass} reveal">
+          <div class="benefit-card__icon">${D.ICONS[b.icon]}</div>
+          <h3 class="benefit-card__title">${t(b.titleKey)}</h3>
+          <ul class="benefit-card__bullets">
+            ${b.bullets.map(bk => `
+              <li>
+                <span class="benefit-card__check" aria-hidden="true">${D.ICONS.check}</span>
+                <span>${t(bk)}</span>
+              </li>
+            `).join('')}
+          </ul>
+          ${imageBlock}
+          <span class="benefit-card__stat">${t(b.statKey)}</span>
+        </article>
+      `;
+    }).join('');
   }
 
   function renderLeadGenCollage() {
