@@ -824,6 +824,68 @@
 }
 
 /* ============================================================
+   FLIP-TEXT SECTION  (typographic statement, hover flips letters)
+   ============================================================ */
+.flip-text {
+  background: var(--navy);
+  padding: 70px 0;
+  overflow: hidden;
+}
+@media (min-width: 980px) { .flip-text { padding: 100px 0; } }
+.flip-text__container {
+  text-align: center;
+}
+.flip-line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 14vw, 11rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--ivory);
+  text-transform: uppercase;
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
+}
+.flip-line--gold { color: var(--gold); }
+
+.flip-line__layer {
+  display: flex;
+  justify-content: center;
+}
+.flip-line__layer--bottom {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.flip-line__letter {
+  display: inline-block;
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Render space characters with a thin width */
+.flip-line__letter:empty { width: 0.4em; }
+
+/* Default: top visible at 0%, bottom hidden below */
+.flip-line__layer--top    .flip-line__letter { transform: translateY(0%); }
+.flip-line__layer--bottom .flip-line__letter { transform: translateY(110%); }
+
+/* Hover: top flies up, bottom slides in */
+.flip-line:hover .flip-line__layer--top    .flip-line__letter { transform: translateY(-110%); }
+.flip-line:hover .flip-line__layer--bottom .flip-line__letter { transform: translateY(0%); }
+
+/* The bottom layer shows in gold (for white lines) or ivory (for gold line) */
+.flip-line:not(.flip-line--gold) .flip-line__layer--bottom .flip-line__letter { color: var(--gold); }
+.flip-line--gold .flip-line__layer--bottom .flip-line__letter { color: var(--ivory); }
+
+/* Touch devices: disable flip (no hover), letters stay at base position */
+@media (hover: none) {
+  .flip-line__layer--bottom { display: none; }
+}
+
+/* ============================================================
    MARQUEE SECTION  (mid-page brand promise)
    ============================================================ */
 .marquee-section {
@@ -1440,10 +1502,16 @@
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 20px;
 }
-@media (min-width: 640px) { .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; } }
+.footer__grid > .footer__col:first-child {
+  grid-column: 1 / -1;  /* brand spans full width on mobile */
+}
+@media (min-width: 640px) {
+  .footer__grid { grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 50px; }
+  .footer__grid > .footer__col:first-child { grid-column: auto; }
+}
 .footer__col h4 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -1451,16 +1519,35 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ivory);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
-.footer__col ul { display: flex; flex-direction: column; gap: 10px; }
-.footer__col a { font-size: 14px; transition: color 0.2s; }
+@media (min-width: 640px) { .footer__col h4 { margin-bottom: 16px; } }
+.footer__col ul { display: flex; flex-direction: column; gap: 8px; }
+@media (min-width: 640px) { .footer__col ul { gap: 10px; } }
+.footer__col a {
+  font-size: 13.5px;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 .footer__col a:hover { color: var(--gold); }
 .footer__brand-text {
-  margin-top: 16px;
-  font-size: 13.5px;
-  line-height: 1.6;
-  max-width: 280px;
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 380px;
+}
+
+/* Social icons in Connect column */
+.footer__socials a svg {
+  flex-shrink: 0;
+  color: rgba(250, 248, 243, 0.85);
+  transition: color 0.2s, transform 0.2s;
+}
+.footer__socials a:hover svg {
+  color: var(--gold);
+  transform: translateY(-1px);
 }
 .footer__bottom {
   margin-top: 50px;

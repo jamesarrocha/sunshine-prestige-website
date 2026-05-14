@@ -180,9 +180,31 @@
 
   /* ─────────────────────────────────────────────
      MARQUEE — runs at constant base speed (CSS only)
-     (Earlier scroll-velocity boost removed — readers
-     couldn't keep up when scrolling.)
      ───────────────────────────────────────────── */
+
+  /* ─────────────────────────────────────────────
+     FLIP-TEXT — split each [data-flip-text] line into
+     two letter layers so CSS can do the hover flip.
+     ───────────────────────────────────────────── */
+  $$('[data-flip-text]').forEach(line => {
+    const text = line.dataset.flipText || '';
+    const letters = text.split('');
+    const buildLayer = (cls) => {
+      const layer = document.createElement('div');
+      layer.className = `flip-line__layer ${cls}`;
+      letters.forEach((ch, i) => {
+        const span = document.createElement('span');
+        span.className = 'flip-line__letter';
+        span.style.transitionDelay = `${i * 25}ms`;
+        span.textContent = ch === ' ' ? ' ' : ch;
+        layer.appendChild(span);
+      });
+      return layer;
+    };
+    line.innerHTML = '';
+    line.appendChild(buildLayer('flip-line__layer--top'));
+    line.appendChild(buildLayer('flip-line__layer--bottom'));
+  });
 
   /* ─────────────────────────────────────────────
      GRADIENT BLOBS — pointer-tracking (Final CTA)
