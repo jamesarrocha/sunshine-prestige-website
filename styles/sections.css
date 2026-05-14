@@ -1086,6 +1086,26 @@
   color: rgba(250, 248, 243, 0.70);
 }
 
+/* Mobile: hide description copy, tighten spacing so the 10
+   steps form a clean vertical scannable list. */
+@media (max-width: 979px) {
+  .step__copy { display: none; }
+  .phase__steps { gap: 12px; }
+  .process__phases { gap: 36px; }
+  .step__body { padding-left: 12px; }
+  .step__title {
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+    /* Vertically center title with the number now that copy is gone */
+    padding: 2px 0;
+  }
+  .phase__header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+}
+
 /* ============================================================
    COVERAGE
    ============================================================ */
