@@ -206,7 +206,7 @@
   opacity: 0;
   animation: fade-up 1s var(--ease-out) 1.8s forwards;
 }
-.trust-track { display: flex; white-space: nowrap; animation: marquee 40s linear infinite; padding: 16px 0; }
+.trust-track { display: flex; white-space: nowrap; animation: marquee 35s linear infinite; padding: 16px 0; }
 .trust-item {
   display: inline-flex; align-items: center; gap: 16px; padding: 0 28px;
   font-family: var(--font-display);
