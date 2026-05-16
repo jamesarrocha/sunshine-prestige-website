@@ -98,7 +98,7 @@
     const accessKey = fd.get('access_key');
 
     // Local dev mode — log to console instead of POSTing
-    if (!accessKey || accessKey === 'REPLACE_WITH_YOUR_KEY') {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       console.info('[Sunshine Prestige · DEV] Lead captured:', Object.fromEntries(fd.entries()));
       await new Promise(r => setTimeout(r, 700));
       msgEl.textContent = t(successKey);
@@ -110,13 +110,13 @@
     }
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://sunshine-platform.vercel.app/api/public/contact-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(Object.fromEntries(fd.entries())),
       });
       const data = await res.json();
-      if (data.success) {
+      if (data.ok) {
         msgEl.textContent = t(successKey);
         msgEl.classList.add('is-success');
         form.reset();
