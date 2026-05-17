@@ -119,6 +119,14 @@
       if (data.ok) {
         msgEl.textContent = t(successKey);
         msgEl.classList.add('is-success');
+        // Meta Pixel — Lead event (after confirmed CRM success)
+        if (typeof fbq === 'function') {
+          const formSource = fd.get('source') || 'unknown';
+          fbq('track', 'Lead', {
+            source: formSource,
+            content_name: 'Quote Request',
+          });
+        }
         form.reset();
       } else {
         throw new Error(data.message || 'Failed');
@@ -240,6 +248,19 @@
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  /* ─────────────────────────────────────────────
+     META PIXEL — non-form events
+     Form 'Lead' event fires inside submitForm() on CRM success.
+     ───────────────────────────────────────────── */
+  // Contact event — any click on a tel: link (mobile call-tracking signal)
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof fbq === 'function') fbq('track', 'Contact');
+    });
+  });
+
+  // TODO: fire fbq('track', 'ViewContent') when /cost-calculator/ launches
 
   /* ─────────────────────────────────────────────
      EXPOSE + INIT
