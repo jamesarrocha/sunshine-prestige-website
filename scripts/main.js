@@ -6,7 +6,7 @@
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const t  = (k) => window.SP_I18N.t(k);
-  const SITE = window.SP_DATA.SITE;
+  const SITE = window.SP_DATA.SITE;    /* ─────────────────────────────────────────────      UTM ATTRIBUTION — capture marketing params on landing      and persist them so the form submission knows where      the lead came from (Meta, Google Ads, etc.)      ───────────────────────────────────────────── */   (function captureUtms() {     try {       const urlParams = new URLSearchParams(window.location.search);       const KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];       const captured = {};       let hasNew = false;       KEYS.forEach(k => {         const v = urlParams.get(k);         if (v && v.trim()) { captured[k] = v.trim(); hasNew = true; }       });       if (hasNew) {         sessionStorage.setItem('sp_attribution', JSON.stringify({           ...captured,           landing_referrer: document.referrer || null,           captured_at: new Date().toISOString(),         }));       }     } catch (e) { /* silent */ }   })();
 
   /* ─────────────────────────────────────────────
      SAFARI DETECTION (gradient blobs fallback)
@@ -87,7 +87,7 @@
      ───────────────────────────────────────────── */
   async function submitForm({ form, btn, msgEl, successKey, errorKey }) {
     const fd = new FormData(form);
-    if (fd.get('botcheck')) return; // honeypot
+    if (fd.get('botcheck')) return; // honeypot      // Attach UTM attribution from sessionStorage (captured on landing)     try {       const attribution = JSON.parse(sessionStorage.getItem('sp_attribution') || '{}');       Object.entries(attribution).forEach(([k, v]) => {         if (v && !fd.has(k)) fd.append(k, String(v));       });     } catch (e) { /* silent */ }
 
     msgEl.className = 'form-msg';
     msgEl.textContent = '';
