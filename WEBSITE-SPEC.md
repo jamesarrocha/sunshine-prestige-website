@@ -160,16 +160,19 @@ must be implementable as static HTML/CSS/JS.
 
 | # | Form | Location | Fields | Endpoint | `source` value | Validation | Anti-spam | Confirmation |
 |---|---|---|---|---|---|---|---|---|
-| 1 | **Quote Modal** | Opens from Hero CTA, Final CTA, Floating Consult button | name, phone, email, county, zip, project | `POST https://api.web3forms.com/submit` | `hero` / `final-cta` / `floating` (set on open) | HTML5 native (`required`, `pattern`, `inputmode`) | Honeypot input `botcheck` (CSS-hidden) | Inline success message in-modal, form resets |
-| 2 | **Inline Lead-Gen** | Mid-page section "30-second quote request" | name, email, phone | Same Web3Forms endpoint | `inline-leadgen` | HTML5 native | Honeypot `botcheck` | Inline success below form |
-| 3 | **Footer Mini-Form** | Footer "Don't wait for the next storm" | email only | Same Web3Forms endpoint | `footer` | HTML5 native (`type=email`, `required`) | Honeypot `botcheck` | Inline success below input |
+| 1 | **Quote Modal** | Opens from Hero CTA, Final CTA, Floating Consult button | name, phone, email, county, zip, project | `POST https://sunshine-platform.vercel.app/api/public/contact-form` | `hero` / `final-cta` / `floating` (set on open) | HTML5 native (`required`, `pattern`, `inputmode`) | Honeypot input `botcheck` (CSS-hidden) | Inline success message in-modal, form resets |
+| 2 | **Inline Lead-Gen** | Mid-page section "30-second quote request" | name, email, phone | Same CRM endpoint | `inline-leadgen` | HTML5 native | Honeypot `botcheck` | Inline success below form |
+| 3 | **Footer Mini-Form** | Footer "Don't wait for the next storm" | email only | Same CRM endpoint | `footer` | HTML5 native (`type=email`, `required`) | Honeypot `botcheck` | Inline success below input |
 
 ### Configuration
 
-- **Web3Forms Access Key:** `2603dc52-1dfc-4416-9fd3-2423404cfe2f`
-- **Email destination:** `info@sunshineprestige.com` (GoDaddy Email Essentials alias → `james@sunshineprestige.com`)
-- **Subject line pattern:** `New lead — Sunshine Prestige` (Modal) · `New lead (Inline) — Sunshine Prestige` · `New lead (Footer) — Sunshine Prestige`
-- **From name:** `sunshineprestige.com`
+- **Endpoint:** `POST https://sunshine-platform.vercel.app/api/public/contact-form`
+  (handled by the `sunshine-platform` CRM project — leads land directly in the CRM database, no email middle-man)
+- **Response contract:** JSON body `{ ok: true }` on success, `{ ok: false, message: string }` on failure
+- **Dev mode bypass:** When `window.location.hostname` is `localhost` or `127.0.0.1`, form submission is short-circuited and logged to console (no real POST) — enables local dev without polluting the CRM
+- **Legacy Web3Forms key** (no longer used in code, kept for reference): `2603dc52-1dfc-4416-9fd3-2423404cfe2f`
+- **Source-tracking field:** hidden `source` input on every form (see column above)
+- **Lead notification:** handled by the CRM (any email forwarding / Slack / etc. configured on that side)
 - **reCAPTCHA:** Not in use (honeypot is sufficient at current lead volume; reconsider if spam exceeds 5% of submissions)
 
 ### Source-tracking strategy
@@ -192,7 +195,8 @@ identify which placement performs best.
 | WhatsApp widget | ❌ Pendiente | Could be added to floating button area |
 | SMS / text-click | ⚠️ Partial | `tel:` links work on mobile; no dedicated SMS endpoint |
 | Live chat | ❌ Pendiente | None |
-| Web3Forms | ✅ Active | Lead-capture handler — see Section 6 |
+| Web3Forms | ⛔ Deprecated | Was active until 2026-05-15; replaced by direct CRM endpoint. Key kept in records but no longer wired |
+| Sunshine CRM API (`sunshine-platform`) | ✅ Active | Receives all form submissions at `/api/public/contact-form`. See Section 6 |
 | Google Fonts | ✅ Active | Montserrat, Cormorant, Inter served via CDN |
 | Vercel Speed Insights | ❌ Pendiente | Free, one-line install — recommend enabling |
 | Vercel Web Analytics | ❌ Pendiente | Free privacy-friendly alternative to GA4 — consider before GA4 |
@@ -338,6 +342,7 @@ Pendiente. Blog infrastructure not yet built. Two options when needed:
 | Date | Version | Author | Changes |
 |---|---|---|---|
 | 2026-05-15 | v1.0 | Sofia · Claude | Initial spec capturing post-launch state |
+| 2026-05-15 | v1.0.1 | Sofia · Claude | Forms migrated from Web3Forms to direct CRM endpoint (`sunshine-platform/api/public/contact-form`). Web3Forms marked deprecated in Section 7 |
 
 ### Review reminder
 
