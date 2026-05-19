@@ -722,14 +722,13 @@
   display: flex;
   flex-direction: column;
   background: #fff;
-  border-radius: 22px;
-  border: 2px solid var(--line-strong);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: transform 0.35s var(--ease-out), box-shadow 0.35s;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
 }
-.serve-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-.serve-card--residential { border-color: var(--navy); }
-.serve-card--commercial  { border-color: var(--gold); }
+.serve-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
 .serve-card__media {
   position: relative;
@@ -762,22 +761,6 @@
   width: 100%; height: 100%;
   object-fit: cover;
   z-index: 1;
-}
-.serve-card__tag {
-  position: absolute;
-  top: 12px; left: 12px;
-  z-index: 2;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: rgba(12, 18, 38, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--ivory);
-  font-family: var(--font-display);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
 }
 .serve-card__arrow {
   position: absolute;
