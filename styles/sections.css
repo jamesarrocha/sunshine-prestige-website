@@ -832,6 +832,59 @@
 .serve-card__cta--commercial:hover { background: var(--gold-soft); }
 
 /* ============================================================
+   FINANCING — 3 payment-path cards
+   ============================================================ */
+.financing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 56px;
+}
+@media (min-width: 640px) { .financing-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+
+.financing-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  padding: 32px 26px;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.financing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.financing-card__icon {
+  width: 60px; height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(221, 171, 87, 0.18) 0%, rgba(221, 171, 87, 0.08) 100%);
+  color: var(--gold-deep);
+  margin-bottom: 18px;
+}
+.financing-card__icon svg { width: 30px; height: 30px; }
+.financing-card__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+}
+.financing-card__copy {
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(29, 40, 75, 0.75);
+}
+
+.financing-cta {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================================
    REVIEWS — Google testimonials grid
    ============================================================ */
 .reviews-grid {
