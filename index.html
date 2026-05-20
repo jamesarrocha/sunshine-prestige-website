@@ -287,9 +287,65 @@
 </section>
 
 <!-- ============================================================
+     FINANCING DETAIL — Lenders + benefits split panel
+============================================================ -->
+<section class="section bg-paper" id="financing-lenders" aria-label="Financing lenders and benefits">
+  <div class="container">
+    <div class="finlend">
+
+      <!-- Navy intro panel -->
+      <div class="finlend__intro">
+        <h2 class="finlend__heading">
+          <span class="accent" data-i18n="finlend.headingA">With Financing,</span>
+        </h2>
+        <p class="finlend__para" data-i18n="finlend.para">you can install impact windows and doors now and pay over time. We offer both credit and non-credit programs, including PACE options for energy-efficient upgrades. Approvals are quick, and longer terms can lower monthly payments while helping offset costs through energy savings.</p>
+        <div class="finlend__divider" aria-hidden="true"></div>
+        <p class="finlend__subhead" data-i18n="finlend.subhead">Choose the best hurricane-ready products without delaying your project. Talk to our team or apply to see the plan that fits your budget.</p>
+        <ul class="finlend__checklist">
+          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li1">$0 down payment options</span></li>
+          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li2">5, 10, 15, 20, 25, and 30-year terms available</span></li>
+          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li3">PACE-secured options</span></li>
+          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li4">Variable interest rates</span></li>
+          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li5">Miami-Dade compliant products eligible</span></li>
+        </ul>
+      </div>
+
+      <!-- Lenders panel -->
+      <div class="finlend__lenders">
+        <h3 class="finlend__lenders-title" data-i18n="finlend.lendersTitle">Lenders,</h3>
+        <p class="finlend__apr" data-i18n="finlend.apr">How does $0 down sound? 100% financing · 3.99–7.99% APR*</p>
+        <div class="finlend__logos">
+          <!-- Drop real logos in assets/img/lenders/ — see note. -->
+          <div class="finlend__logo"><img src="assets/img/lenders/goodleap.svg" alt="GoodLeap" loading="lazy" /></div>
+          <div class="finlend__logo"><img src="assets/img/lenders/fortifi.png" alt="FortiFi" loading="lazy" /></div>
+          <div class="finlend__logo"><img src="assets/img/lenders/renew-financial.webp" alt="Renew Financial" loading="lazy" /></div>
+        </div>
+        <button type="button" class="finlend__badge" data-open-modal="financing-lenders">
+          <span class="finlend__badge-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+          <span data-i18n="finlend.badge">Get Approved In 30 Minutes Or Less</span>
+        </button>
+        <p class="finlend__disclaimer" data-i18n="finlend.disclaimer">*Rates vary by lender, term, and credit profile. All financing subject to approval.</p>
+      </div>
+
+      <!-- Photo panel -->
+      <div class="finlend__photo">
+        <div class="finlend__photo-placeholder" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      INLINE LEAD-GEN SECTION (collage + quick form)
 ============================================================ -->
-<section class="section leadgen bg-paper" id="leadgen" aria-label="Quick quote request">
+<section class="section leadgen bg-ivory" id="leadgen" aria-label="Quick quote request">
   <div class="container">
     <div class="reveal" style="max-width: 720px;">
       <span class="section-eyebrow" style="color: var(--gold-deep);" data-i18n="leadgen.eyebrow">Get in Touch</span>
@@ -347,7 +403,7 @@
 <!-- ============================================================
      BEFORE & AFTER GALLERY
 ============================================================ -->
-<section class="section bg-ivory" id="gallery" aria-label="Before and after gallery">
+<section class="section bg-paper" id="gallery" aria-label="Before and after gallery">
   <div class="container">
     <div class="reveal" style="max-width: 720px;">
       <span class="section-eyebrow" style="color: var(--gold-deep);" data-i18n="gallery.eyebrow">Before &amp; After</span>
@@ -568,62 +624,6 @@
         <div class="warranty__years-suffix" data-i18n="warranty.years">Years</div>
         <div class="warranty__label" data-i18n="warranty.workmanship">Workmanship Warranty</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FINANCING DETAIL — Lenders + benefits split panel
-============================================================ -->
-<section class="section bg-paper" id="financing-lenders" aria-label="Financing lenders and benefits">
-  <div class="container">
-    <div class="finlend">
-
-      <!-- Navy intro panel -->
-      <div class="finlend__intro">
-        <h2 class="finlend__heading">
-          <span class="accent" data-i18n="finlend.headingA">With Financing,</span>
-        </h2>
-        <p class="finlend__para" data-i18n="finlend.para">you can install impact windows and doors now and pay over time. We offer both credit and non-credit programs, including PACE options for energy-efficient upgrades. Approvals are quick, and longer terms can lower monthly payments while helping offset costs through energy savings.</p>
-        <div class="finlend__divider" aria-hidden="true"></div>
-        <p class="finlend__subhead" data-i18n="finlend.subhead">Choose the best hurricane-ready products without delaying your project. Talk to our team or apply to see the plan that fits your budget.</p>
-        <ul class="finlend__checklist">
-          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li1">$0 down payment options</span></li>
-          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li2">5, 10, 15, 20, 25, and 30-year terms available</span></li>
-          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li3">PACE-secured options</span></li>
-          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li4">Variable interest rates</span></li>
-          <li><span class="finlend__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="finlend.li5">Miami-Dade compliant products eligible</span></li>
-        </ul>
-      </div>
-
-      <!-- Lenders panel -->
-      <div class="finlend__lenders">
-        <h3 class="finlend__lenders-title" data-i18n="finlend.lendersTitle">Lenders,</h3>
-        <p class="finlend__apr" data-i18n="finlend.apr">How does $0 down sound? 100% financing · 3.99–7.99% APR*</p>
-        <div class="finlend__logos">
-          <!-- Drop real logos in assets/img/lenders/ — see note. -->
-          <div class="finlend__logo"><img src="assets/img/lenders/goodleap.svg" alt="GoodLeap" loading="lazy" /></div>
-          <div class="finlend__logo"><img src="assets/img/lenders/fortifi.png" alt="FortiFi" loading="lazy" /></div>
-          <div class="finlend__logo"><img src="assets/img/lenders/renew-financial.webp" alt="Renew Financial" loading="lazy" /></div>
-        </div>
-        <button type="button" class="finlend__badge" data-open-modal="financing-lenders">
-          <span class="finlend__badge-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><polyline points="9 12 11 14 15 10"/></svg>
-          </span>
-          <span data-i18n="finlend.badge">Get Approved In 30 Minutes Or Less</span>
-        </button>
-        <p class="finlend__disclaimer" data-i18n="finlend.disclaimer">*Rates vary by lender, term, and credit profile. All financing subject to approval.</p>
-      </div>
-
-      <!-- Photo panel -->
-      <div class="finlend__photo">
-        <div class="finlend__photo-placeholder" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/>
-          </svg>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
