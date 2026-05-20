@@ -885,6 +885,176 @@
 }
 
 /* ============================================================
+   FINANCING DETAIL — Lenders + benefits 3-zone composition
+   ============================================================ */
+.finlend {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 8px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+@media (min-width: 980px) {
+  .finlend { grid-template-columns: 1.35fr 1fr 0.85fr; }
+}
+
+/* Navy intro panel */
+.finlend__intro {
+  background: linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: var(--ivory);
+  padding: 42px 36px;
+}
+@media (min-width: 980px) { .finlend__intro { padding: 52px 44px; } }
+.finlend__heading {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.finlend__heading .accent { color: var(--gold); }
+.finlend__para {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(250, 248, 243, 0.82);
+}
+.finlend__divider {
+  height: 1px;
+  background: rgba(250, 248, 243, 0.15);
+  margin: 26px 0;
+}
+.finlend__subhead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ivory);
+}
+.finlend__checklist {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.finlend__checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  color: rgba(250, 248, 243, 0.90);
+}
+.finlend__check {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.finlend__check svg { width: 11px; height: 11px; }
+
+/* Lenders light panel */
+.finlend__lenders {
+  background: var(--ivory);
+  padding: 42px 34px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 980px) { .finlend__lenders { padding: 52px 38px; } }
+.finlend__lenders-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1;
+}
+.finlend__apr {
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(29, 40, 75, 0.70);
+}
+.finlend__logos {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.finlend__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 100%;
+}
+.finlend__logo img {
+  max-height: 100%;
+  max-width: 175px;
+  width: auto;
+  object-fit: contain;
+}
+.finlend__badge {
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  text-align: left;
+  box-shadow: var(--shadow-gold);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.finlend__badge:hover {
+  background: var(--gold-soft);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold-lg);
+}
+.finlend__badge-icon { flex-shrink: 0; display: inline-flex; }
+.finlend__badge-icon svg { width: 22px; height: 22px; }
+.finlend__disclaimer {
+  margin-top: 14px;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: rgba(29, 40, 75, 0.50);
+}
+
+/* Photo panel */
+.finlend__photo {
+  position: relative;
+  min-height: 260px;
+}
+.finlend__photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, var(--periwinkle) 0%, var(--navy-700) 100%);
+  color: rgba(250, 248, 243, 0.40);
+}
+.finlend__photo-placeholder svg { width: 60px; height: 60px; }
+/* Drop a real photo: <img> inside .finlend__photo covers the placeholder */
+.finlend__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
    REVIEWS — Google testimonials grid
    ============================================================ */
 .reviews-grid {
