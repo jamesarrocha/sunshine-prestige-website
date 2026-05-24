@@ -30,7 +30,7 @@ const I18N = {
 
     'pillars.eyebrow': 'Why Sunshine Prestige',
     'pillars.title': 'Five reasons families across South Florida trust us.',
-    'pillars.lead': "We don't just sell windows. We protect what's behind them — your family, your home, your peace of mind.",
+    'pillars.lead': "We don't just sell windows. We protect what's behind them: your family, your home, your peace of mind.",
     'pillar1.t': 'Led by Expertise',
     'pillar1.c': 'Founded by a 20-year remodeling veteran with an MBA — a passion for helping homeowners feel safe, secure, and proud of their homes.',
     'pillar2.t': 'Built on Trust',
@@ -273,7 +273,7 @@ const I18N = {
 
     'pillars.eyebrow': 'Por Qué Sunshine Prestige',
     'pillars.title': 'Cinco razones por las que las familias del Sur de Florida confían en nosotros.',
-    'pillars.lead': 'No solo vendemos ventanas. Protegemos lo que está detrás — tu familia, tu hogar, tu tranquilidad.',
+    'pillars.lead': 'No solo vendemos ventanas. Protegemos lo que está detrás: tu familia, tu hogar, tu tranquilidad.',
     'pillar1.t': 'Liderados por la Experiencia',
     'pillar1.c': 'Fundada por un veterano con 20 años en remodelación y un MBA — con la pasión de hacer que cada familia se sienta segura, protegida y orgullosa de su casa.',
     'pillar2.t': 'Construidos sobre la Confianza',

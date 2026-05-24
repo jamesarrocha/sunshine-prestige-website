@@ -76,9 +76,12 @@
             <div class="stat-card__label">${t(c.labelKey)}</div>
           </div>`;
       }
+      const media = c.image
+        ? `<img src="${c.image}" alt="" loading="lazy" />`
+        : `<div class="collage-cell__placeholder" aria-hidden="true"></div>`;
       return `
         <div class="collage-cell">
-          <div class="collage-cell__placeholder" aria-hidden="true"></div>
+          ${media}
           <span class="collage-cell__label">${t(c.labelKey)}</span>
         </div>`;
     }).join('');
