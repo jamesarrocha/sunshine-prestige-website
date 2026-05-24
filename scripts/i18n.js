@@ -225,7 +225,7 @@ const I18N = {
     'footer.connect': 'Connect',
     'footer.google': 'Google Reviews ↗',
     'footer.copy': '© 2026 Sunshine Prestige Impact Windows & Doors. All rights reserved.',
-    'footer.license': 'FL Lic. #XXXXXXX · Licensed & Insured',
+    'footer.license': 'Licensed & Insured',
 
     'form.title': 'Get a Free Quote',
     'form.subtitle': 'Tell us about your home. Our team will reach out within 24 hours with a no-obligation estimate.',
@@ -467,7 +467,7 @@ const I18N = {
     'footer.connect': 'Síguenos',
     'footer.google': 'Reseñas en Google ↗',
     'footer.copy': '© 2026 Sunshine Prestige Ventanas y Puertas de Impacto. Todos los derechos reservados.',
-    'footer.license': 'FL Lic. #XXXXXXX · Licenciados y Asegurados',
+    'footer.license': 'Licenciados y Asegurados',
 
     'form.title': 'Cotización Gratis',
     'form.subtitle': 'Cuéntanos sobre tu hogar. Te contactamos en menos de 24 horas con una estimación sin compromiso.',
