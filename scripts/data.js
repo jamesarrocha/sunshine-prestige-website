@@ -110,7 +110,7 @@ const REVIEWS = [
 
 const LEADGEN_COLLAGE = [
   { type: 'stat', variant: 'gold',       numKey: 'lstat1.n', labelKey: 'lstat1.l' },
-  { type: 'placeholder', labelKey: 'lcol1.label' },
+  { type: 'placeholder', labelKey: 'lcol1.label', image: 'assets/img/collage/installation.png' },
   { type: 'placeholder', labelKey: 'lcol2.label', image: 'assets/img/collage/family-home.png' },
   { type: 'stat', variant: 'periwinkle', numKey: 'lstat2.n', labelKey: 'lstat2.l' },
   { type: 'stat', variant: 'wine',       numKey: 'lstat3.n', labelKey: 'lstat3.l' },
