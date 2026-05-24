@@ -114,7 +114,7 @@ const LEADGEN_COLLAGE = [
   { type: 'placeholder', labelKey: 'lcol2.label', image: 'assets/img/collage/family-home.png' },
   { type: 'stat', variant: 'periwinkle', numKey: 'lstat2.n', labelKey: 'lstat2.l' },
   { type: 'stat', variant: 'wine',       numKey: 'lstat3.n', labelKey: 'lstat3.l' },
-  { type: 'placeholder', labelKey: 'lcol3.label' },
+  { type: 'placeholder', labelKey: 'lcol3.label', image: 'assets/img/collage/laminated-glass.png' },
 ];
 
 /* Trust strip items — with optional icon override (e.g. flag for USA-Made) */
