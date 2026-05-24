@@ -26,7 +26,7 @@ const I18N = {
     'trust.inhouse': 'In-House Installers · No Subcontractors',
     'trust.financing': 'Financing Available',
     'trust.counties': 'Miami-Dade · Broward · Palm Beach',
-    'trust.licensed': 'Licensed & Insured · Lifetime Warranty',
+    'trust.licensed': 'Licensed & Insured',
 
     'pillars.eyebrow': 'Why Sunshine Prestige',
     'pillars.title': 'Five reasons families across South Florida trust us.',
@@ -269,7 +269,7 @@ const I18N = {
     'trust.inhouse': 'Instaladores Propios · Sin Subcontratistas',
     'trust.financing': 'Financiamiento Disponible',
     'trust.counties': 'Miami-Dade · Broward · Palm Beach',
-    'trust.licensed': 'Licenciados y Asegurados · Garantía de por Vida',
+    'trust.licensed': 'Licenciados y Asegurados',
 
     'pillars.eyebrow': 'Por Qué Sunshine Prestige',
     'pillars.title': 'Cinco razones por las que las familias del Sur de Florida confían en nosotros.',
