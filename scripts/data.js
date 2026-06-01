@@ -9,6 +9,9 @@ const SITE = {
   email: 'info@sunshineprestige.com',
   reviewsUrl:
     'https://www.google.com/maps/place/Sunshine+Prestige+Impact+Windows+and+Doors/data=!4m2!3m1!1s0x0:0xbd04d28289d25b35?sa=X&ved=1t:2428&hl=en&ictx=111',
+  // Update these when the Google profile gets new reviews
+  googleRating: '5.0',
+  googleReviewCount: '12+',
   web3formsKey: 'REPLACE_WITH_YOUR_KEY',
 };
 

@@ -9,6 +9,8 @@ const I18N = {
     'nav.gallery': 'Projects', 'nav.reviews': 'Reviews',
     'nav.process': 'Process', 'nav.coverage': 'Coverage',
     'nav.reviewsBtn': 'Reviews',
+    'hero.googleBadge': 'Rated on Google',
+    'hero.googleReviews': 'Reviews',
     'topbar.schedule': 'Schedule Online',
     'topbar.phoneAria': 'Call Sunshine Prestige at (305) 898-5167',
 
@@ -252,6 +254,8 @@ const I18N = {
     'nav.gallery': 'Proyectos', 'nav.reviews': 'Reseñas',
     'nav.process': 'Proceso', 'nav.coverage': 'Cobertura',
     'nav.reviewsBtn': 'Reseñas',
+    'hero.googleBadge': 'Calificación en Google',
+    'hero.googleReviews': 'Reseñas',
     'topbar.schedule': 'Agendar Cita',
     'topbar.phoneAria': 'Llamar a Sunshine Prestige al (305) 898-5167',
 

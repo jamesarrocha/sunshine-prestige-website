@@ -180,6 +180,16 @@
     el.textContent = t('float.text');
   }
 
+  function renderGoogleBadge() {
+    const badge = document.getElementById('hero-google-badge');
+    if (!badge) return;
+    badge.href = D.SITE.reviewsUrl;
+    const ratingEl = badge.querySelector('[data-google-rating]');
+    const countEl  = badge.querySelector('[data-google-count]');
+    if (ratingEl) ratingEl.textContent = D.SITE.googleRating;
+    if (countEl)  countEl.textContent  = D.SITE.googleReviewCount;
+  }
+
   window.SP_RENDER = {
     all() {
       renderTrustStrip();
@@ -191,6 +201,7 @@
       renderGallery();
       renderReviews();
       renderFloatingText();
+      renderGoogleBadge();
       if (window.SP_MAIN && window.SP_MAIN.refreshReveals) window.SP_MAIN.refreshReveals();
     },
   };
